@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="css/bootstrap.css" rel="stylesheet" type="text/css">
+    <link href="css/styles.css" rel="stylesheet" type="text/css">
+    <script src="js/jquery-3.2.1.js"></script>
+    <script src="js/scripts.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Amita|Caveat" rel="stylesheet">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta <meta charset="utf-8">
+    <title>Pig Dice</title>
+</head>
+
+<body>
+
+    <div class="jumbotron">
+        <center>
+            <h1>Pig Dice</h1></center>
+    </div>
+    <div class="start-menu">
+        <form id="player1">
+            <div class="form-group">
+                <label for="playerName">Player 1 Name: </label>
+                <input required class="player1Name form-control" type="text">
+            </div>
+            <form id="player2">
+                <div class="form-group">
+                    <label for="playerName">Player 2 Name:</label>
+                    <input required class="player2Name form-control" type="text">
+                </div>
+            </form>
+            <button id="start" class="btn-info btn">Start Game</button>
+    </div>
+    <div class="container-fluid players">
+
+        <div class="col-md-3 player">
+            <h3>Player 1:<span id="player1Name"></span></h3>
+
+            <p>Roll Value:<span id="rollValue1"></span></p>
+            <p>Total Score:<span id="totalScore1"></span></p>
+
+            <button type="button" name="roll" class="btn btn-inverse" id="rollDice1">Roll</button>
+            <button type="button" name="hold" class="btn btn-success" id="hold1">Hold</button>
+
+            <div class="row buttonStart">
+                <button id="newGame" class="btn btn-success">New Game</button>
+            </div>
+        </div>
+        <div class="col-md-3 player">
+            <h3>Player 2:<span id="player2Name"></span></h3>
+
+            <p>Roll Value:<span id="rollValue2"></span></p>
+            <p>Total Score:<span id="totalScore2"></span></p>
+
+            <button type="button" name="roll" class="btn btn-inverse" id="rollDice2">Roll</button>
+            <button type="button" name="hold" class="btn btn-success" id="hold2">Hold</button>
+        </div>
+
+        <div class="col-md-offset-7 rules">
+            <h1><strong>Pig Dice Rules</strong></h1>
+            <ul>
+                <li>Each turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "hold".</li>
+                <li>If the player rolls a 1, they score nothing and it becomes the next player's turn.</li>
+                <li>If the player rolls any other number, it is added to their turn total and the player's turn continues.</li>
+                <li>If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.</li>
+                <li>The first player to score 100 or more points wins.</li>
+        </div>
+
+    </div>
+</body>
+
+</html>
