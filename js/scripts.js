@@ -86,7 +86,7 @@ $(document).ready(function () {
 
     });
 
-    $("button#easyLevel").click(function (event) {
+    $("button#hardLevel").click(function (event) {
 
         player1 = new Player(true);
         player2 = new Player(false);
