@@ -17,8 +17,17 @@
 
     <div class="jumbotron">
         <center>
-            <h1>Pig-Dice</h1></center>
+            <h1>Pig-Dice</h1>
+        </center>
     </div>
+
+    <div class="introduction">
+        <h2>Pick a level to proceed</h2>
+        <button type="button" name="easy" class="btn btn-inverse" id="easyLevel">Easy Level</button><br>
+        <button type="button" name="hard" class="btn btn-success" id="hardLevel">Hard Level</button>
+        </ul>
+    </div>
+
     <div class="start-menu">
         <form id="player1">
             <div class="form-group">
@@ -33,6 +42,8 @@
             </form>
             <button id="start" class="btn-info btn">Start Game</button>
     </div>
+
+
     <div class="container-fluid players">
 
         <div class="col-md-3 player">
@@ -61,10 +72,13 @@
         <div class="col-md-offset-7 rules">
             <h1><strong>Pig Dice Rules</strong></h1>
             <ul>
-                <li>Each turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "hold".</li>
+                <li>Each turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to
+                    "hold".</li>
                 <li>If the player rolls a 1, they score nothing and it becomes the next player's turn.</li>
-                <li>If the player rolls any other number, it is added to their turn total and the player's turn continues.</li>
-                <li>If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.</li>
+                <li>If the player rolls any other number, it is added to their turn total and the player's turn
+                    continues.</li>
+                <li>If a player chooses to "hold", their turn total is added to their score, and it becomes the next
+                    player's turn.</li>
                 <li>The first player to score 100 or more points wins.</li>
         </div>
 

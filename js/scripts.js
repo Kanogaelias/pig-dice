@@ -4,7 +4,7 @@ var player2 = "";
 var player1win = "";
 var player2win = "";
 
-var rollDice = function() {
+var rollDice = function () {
     return Math.floor(Math.random() * 6) + 1;
 }
 
@@ -16,7 +16,7 @@ function Player(activePlayer) {
 }
 
 // checking if player rolled one
-Player.prototype.rollOne = function() {
+Player.prototype.rollOne = function () {
     if (this.roll === 1) {
         this.tempScore = 0;
         alert("Sorry " + this.playerName + "You rolled ONE, Better luck next time");
@@ -26,13 +26,13 @@ Player.prototype.rollOne = function() {
     }
 }
 // hold
-Player.prototype.hold = function() {
+Player.prototype.hold = function () {
     this.scoreTotal += this.tempScore;
     this.tempScore = 0;
     alert(this.playerName + ", You're so kind");
 }
 // change turn
-Player.prototype.changeTurn1 = function() {
+Player.prototype.changeTurn1 = function () {
     if (this.roll === 1) {
         this.player1 += this.tempScore;
         $("button#rollDice1").prop("disabled", true);
@@ -41,7 +41,7 @@ Player.prototype.changeTurn1 = function() {
         $("button#hold2").prop("disabled", false);
     }
 };
-Player.prototype.changeTurn2 = function() {
+Player.prototype.changeTurn2 = function () {
     if (this.roll === 1) {
         this.player2 += this.tempScore;
         $("button#rollDice2").prop("disabled", true);
@@ -50,25 +50,26 @@ Player.prototype.changeTurn2 = function() {
         $("button#hold1").prop("disabled", false);
     }
 };
-Player.prototype.checkScore = function() {
+Player.prototype.checkScore = function () {
     if (Player.scoreTotal >= 100) {
         alert("WE GOT A WINNER!!");
     }
 };
-Player.prototype.newGame = function() {
+Player.prototype.newGame = function () {
     this.roll = 0;
     this.tempScore = 0;
     this.scoreTotal = 0;
     this.playerName = "";
 };
-var clearValues = function() {
+var clearValues = function () {
     $(".player1Name").val("");
     $(".player2Name").val("");
 }
 
 // user interface
-$(document).ready(function() {
-    $("button#start").click(function(event) {
+$(document).ready(function () {
+    $("button#easyLevel").click(function (event) {
+
         player1 = new Player(true);
         player2 = new Player(false);
         $(".players").show();
@@ -85,7 +86,25 @@ $(document).ready(function() {
 
     });
 
-    $("button#newGame").click(function(event) {
+    $("button#easyLevel").click(function (event) {
+
+        player1 = new Player(true);
+        player2 = new Player(false);
+        $(".players").show();
+        $(".start-menu").hide();
+
+        var player1Name = $("input.player1Name").val();
+        $("#player1Name").text(player1Name);
+        var player2Name = $("input.player2Name").val();
+        $("#player2Name").text(player2Name);
+
+        player1.playerName = player1Name;
+        player2.playerName = player2Name;
+
+
+    });
+
+    $("button#newGame").click(function (event) {
         $(".players").hide();
         clearValues();
         player1.newGame();
@@ -98,7 +117,7 @@ $(document).ready(function() {
         $(".start-menu").show();
     });
 
-    $("button#rollDice1").click(function(event) {
+    $("button#rollDice1").click(function (event) {
         player1.roll = rollDice();
         $("#rollValue1").text(player1.roll);
         player1.rollOne();
@@ -107,7 +126,7 @@ $(document).ready(function() {
         player1.checkScore();
     });
 
-    $("button#rollDice2").click(function(event) {
+    $("button#rollDice2").click(function (event) {
         player2.roll = rollDice();
         $("#rollValue2").text(player2.roll);
         player2.rollOne();
@@ -116,7 +135,7 @@ $(document).ready(function() {
         player2.checkScore();
     });
 
-    $("button#hold1").click(function(event) {
+    $("button#hold1").click(function (event) {
         player1.hold();
         $("#rollValue1").empty();
         $("#totalScore1").text(player1.scoreTotal + player1.tempScore);
@@ -127,7 +146,7 @@ $(document).ready(function() {
         $("button#hold2").prop("disabled", false);
     });
 
-    $("button#hold2").click(function(event) {
+    $("button#hold2").click(function (event) {
         player2.hold();
         $("#rollValue2").empty();
         $("#totalScore2").text(player2.scoreTotal + player2.tempScore);
