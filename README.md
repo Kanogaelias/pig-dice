@@ -7,24 +7,24 @@
                - If a player chooses to "hold", their turn total is added to their score, and it becomes the next player's turn.
                - The first player to score 100 or more points wins.
                
-Setup/Installation Requirements
+## Setup/Installation Requirements
           Must have internet connectivity
           Have a modern browser
           Have a git-hub account
           Have a text editor
-The live site is published as:https://kanogaelias.github.io/pig-dice/
-There are no Known Bugs
-Languages used are: 
+# The live site is published as:https://kanogaelias.github.io/pig-dice/
+## There are no Known Bugs
+### Languages used are: 
            HTML
            CSS
            BOOTSRAP
            JAVASCRIPT
            
-For any issues or questions arising, Contact details are:
+# For any issues or questions arising, Contact details are:
 *+254721467894 *kanogae@gmail.com
 
-MIT License
-Copyright @2018
+# MIT License
+# Copyright @2018
 
 
           
