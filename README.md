@@ -1,4 +1,4 @@
-PIG-DICE
+# PIG-DICE
 By Elias Kanoga Ndegwa
 This is an app game whereby a player has to follow certain rules in playing.The game implementation is a single player game against another  player. This rules are:
                - Each turn, a player repeatedly rolls a die until either a 1 is rolled or the player decides to "hold".
